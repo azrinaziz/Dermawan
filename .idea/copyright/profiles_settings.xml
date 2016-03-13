@@ -1,3 +1,7 @@
 <component name="CopyrightManager">
-  <settings default="" />
+  <settings default="Dermawan Copyright">
+    <module2copyright>
+      <element module="All" copyright="Dermawan Copyright" />
+    </module2copyright>
+  </settings>
 </component>
