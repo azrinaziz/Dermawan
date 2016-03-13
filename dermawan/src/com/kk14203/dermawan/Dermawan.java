@@ -9,9 +9,10 @@
 
 package com.kk14203.dermawan;
 
-public class Dermawan {
+final public class Dermawan {
 
     private void execute() {
+        System.out.println("Dermawan");
     }
 
     public static void main(String[] args) {
