@@ -11,6 +11,11 @@ package com.kk14203.dermawan;
 
 public class Dermawan {
 
+    private void execute() {
+    }
+
     public static void main(String[] args) {
+        Dermawan dermawan = new Dermawan();
+        dermawan.execute();
     }
 }
