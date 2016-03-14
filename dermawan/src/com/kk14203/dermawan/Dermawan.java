@@ -14,7 +14,6 @@ final public class Dermawan {
     private void execute() {
         System.out.println("Dermawan");
         System.out.println("KK14203");
-        System.out.println("Ezra sudah conquer sini dan entahlah.");
     }
 
     public static void main(String[] args) {
