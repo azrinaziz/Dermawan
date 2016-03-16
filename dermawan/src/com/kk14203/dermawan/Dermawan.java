@@ -1,6 +1,5 @@
 /*
  * Name:        Dermawan.java
- * Created:     14-3-2016
  * Copyright:   (c) 2016 Azrin Aziz <azrinaziz@gmail.com>
  * Limitations: For educational purposes only. Any unauthorised copying of any
  *              part of this source code without the authors' explicit
