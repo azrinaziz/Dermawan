@@ -32,7 +32,6 @@ final public class Dermawan {
 
 
 
-
     public static void main(String[] args) {
 
         Dermawan dermawan = new Dermawan();
