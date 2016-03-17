@@ -27,6 +27,7 @@ final public class Dermawan {
             System.out.println("(3) - Edit donor");
             System.out.println("(4) - View Donor");
             System.out.println("Please enter between 1 - 4. Enter 0 to exit");
+            System.out.println();
         }
 
 
