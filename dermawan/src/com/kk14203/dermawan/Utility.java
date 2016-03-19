@@ -8,10 +8,7 @@
 
 package com.kk14203.dermawan;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,16 +26,28 @@ final class Utility {
         else return null;
     }
 
+    static boolean saveFile(File file, List<Donator> donatorList) {
+        if (donatorList != null && !donatorList.isEmpty()) {
+            try (FileOutputStream fileOutputStream = new FileOutputStream(file, false); ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
+                objectOutputStream.writeObject(donatorList);
+                return true;
+            } catch (IOException e) {
+                return false;
+            }
+        }
+        else return false;
+    }
+
     @SuppressWarnings("unchecked")
     static List<Donator> deserialise(FileInputStream fileInputStream) {
-        List<Donator> donatorsList = new ArrayList<>();
+        List<Donator> donatorList = new ArrayList<>();
 
         try (ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
-            donatorsList = (List<Donator>) objectInputStream.readObject();
-            return donatorsList;
+            donatorList = (List<Donator>) objectInputStream.readObject();
+            return donatorList;
         }
         catch (IOException | ClassNotFoundException e) {
-            return donatorsList;
+            return donatorList;
         }
     }
 }
