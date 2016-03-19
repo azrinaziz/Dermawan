@@ -8,7 +8,9 @@
 
 package com.kk14203.dermawan;
 
-final class Donator {
+import java.io.Serializable;
+
+final class Donator implements Serializable {
 
     private final String NAME;
     private final double TOTAL_CONTRIBUTION;

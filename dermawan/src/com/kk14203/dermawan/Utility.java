@@ -31,7 +31,8 @@ final class Utility {
             try (FileOutputStream fileOutputStream = new FileOutputStream(file, false); ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
                 objectOutputStream.writeObject(donatorList);
                 return true;
-            } catch (IOException e) {
+            }
+            catch (IOException e) {
                 return false;
             }
         }
@@ -49,5 +50,17 @@ final class Utility {
         catch (IOException | ClassNotFoundException e) {
             return donatorList;
         }
+    }
+
+    static char[] horizontalLine(char character, int length) {
+        char[] horizontalLine = new char[length];
+        int i = 0;
+
+        while (i < length) {
+            horizontalLine[i] = character;
+            i++;
+        }
+
+        return horizontalLine;
     }
 }
