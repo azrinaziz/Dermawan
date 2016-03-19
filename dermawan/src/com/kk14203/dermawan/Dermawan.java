@@ -10,7 +10,7 @@ package com.kk14203.dermawan;
 
 import java.util.Scanner;
 
-final public class Dermawan {
+final class Dermawan {
 
     private void execute()//used to output details about the program
         {

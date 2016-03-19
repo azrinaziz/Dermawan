@@ -10,15 +10,15 @@ package com.kk14203.dermawan;
 
 final class Donator {
 
-    private String name;
-    private double totalContribution;
+    private final String NAME;
+    private final double TOTAL_CONTRIBUTION;
 
     Donator(String name, double totalContribution) {
-        this.name = name;
-        this.totalContribution = totalContribution;
+        NAME = name;
+        TOTAL_CONTRIBUTION = totalContribution;
     }
 
-    String getName() { return this.name; }
+    String getName() { return NAME; }
 
-    double getTotalContribution() { return this.totalContribution; }
+    double getTotalContribution() { return TOTAL_CONTRIBUTION; }
 }

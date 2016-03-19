@@ -9,40 +9,36 @@
 package com.kk14203.dermawan;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 final class Utility {
 
-    static List<Object> loadFile(File file, Object object, boolean createNewFile) throws IOException {
-        /*
-        List<Object> donatorsList = new ArrayList<>();
-
-        if (file.exists()) {
-            FileInputStream fileInputStream = new FileInputStream(file);
-
-            if (file.length() > 0) {
-                try (ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
-                    donatorsList = (List<Object>) objectInputStream.readObject();
-                }
-                catch (ClassNotFoundException e) {
-                    return null;
-                }
+    static FileInputStream loadFile(File file) {
+        if (file.exists() && file.length() > 0) {
+            try (FileInputStream fileInputStream = new FileInputStream(file)) {
+                return fileInputStream;
             }
-
-            fileInputStream.close();
-            return donatorsList;
-
-        } else {
-            if (createNewFile) {
-                if (file.createNewFile())
-                    return donatorsList;
-                else
-                    return null;
-            } else
+            catch (IOException e) {
                 return null;
+            }
         }
-        */
-        return null;
+        else return null;
+    }
+
+    @SuppressWarnings("unchecked")
+    static List<Donator> deserialise(FileInputStream fileInputStream) {
+        List<Donator> donatorsList = new ArrayList<>();
+
+        try (ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
+            donatorsList = (List<Donator>) objectInputStream.readObject();
+            return donatorsList;
+        }
+        catch (IOException | ClassNotFoundException e) {
+            return donatorsList;
+        }
     }
 }
